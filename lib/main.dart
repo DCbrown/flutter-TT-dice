@@ -251,140 +251,174 @@ class HomePage extends StatefulWidget {
           backgroundColor: Color(0xFF2ecc71),
           appBar: AppBar(
             centerTitle: true,
-            title: Text('Dice - $diceLabel'),
+            title: Text('$diceLabel'),
             backgroundColor: Color(0xFF27ae60),
           ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        "Save Value: $saveTotalDiceRoll",
-                        style: TextStyle(fontSize: 30, color: Colors.white),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                        child: new RaisedButton(
-                          onPressed: () {
-                            _diceSelectionMenu(context);
-                          },
-                          textColor: Colors.white,
-                          color: Color(0xFF27ae60),
-                          padding: const EdgeInsets.all(8.0),
-                          child: new Text(
-                              "Select Dice",
-                              style: TextStyle(fontSize: 20)
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Padding(
-                        child: Image.asset('images/$diceDir$diceNumber.png'),
-                        padding: EdgeInsets.all(60),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new RaisedButton(
-                      onPressed: () {
-                        setState(() {
-                          add();
-                          // diceSelectionMenu(context);
-                        });
-                      },
-                      textColor: Colors.white,
-                      color: Color(0xFF27ae60),
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Text(
-                          "+",
-                          style: TextStyle(fontSize: 20)
-                      ),
-                    ),
-                    new RaisedButton(
-                      onPressed: () {
-                        setState(() {
-                          subtract();
-                        });
-                      },
-                      textColor: Colors.white,
-                      color: Color(0xFF27ae60),
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Text(
-                          "-",
-                          style: TextStyle(fontSize: 20)
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top:10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          body: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [Color(0xff3335c9), Color(0xffb63f57)])),
+            child: Center(
+              child: Column(
+
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Row(
                     children: <Widget>[
-                      new RaisedButton(
-                        onPressed: () {
-                          setState(() {
-                            saveDiceRoll();
-                          });
-                        },
-                        textColor: Colors.white,
-                        color: Color(0xFF27ae60),
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Text(
-                            "Save",
-                            style: TextStyle(fontSize: 20)
-                        ),
-                      ),
-                      new RaisedButton(
-                        onPressed: () {
-                          setState(() {
-                            diceRoll();
-                          });
-                        },
-                        textColor: Colors.white,
-                        color: Color(0xFF27ae60),
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Text(
-                            "Roll",
-                            style: TextStyle(fontSize: 20)
-                        ),
-                      ),
-                      new RaisedButton(
-                        onPressed: () {
-                          setState(() {
-                            clearDiceRoll();
-                          });
-                        },
-                        textColor: Colors.white,
-                        color: Color(0xFF27ae60),
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Text(
-                            "Clear (Hold for 3 sec)",
-                            style: TextStyle(fontSize: 20)
+                      Expanded(
+                        child: Text(
+                          "Save Roll: $saveTotalDiceRoll",
+                          style: TextStyle(fontSize: 30, color: Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                          child: new RaisedButton(
+                            onPressed: () {
+                              _diceSelectionMenu(context);
+                            },
+                            textColor: Colors.white,
+                            color: Color(0xFF27ae60),
+                            child: new Text(
+                                "Select Dice",
+                                style: TextStyle(fontSize: 20)
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          child: Image.asset('images/$diceDir$diceNumber.png'),
+                          padding: EdgeInsets.all(60),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                          child: new RaisedButton(
+                            onPressed: () {
+                              setState(() {
+                                add();
+                                // diceSelectionMenu(context);
+                              });
+                            },
+                            textColor: Colors.white,
+                            color: Color(0xFF27ae60),
+                            child: new Text(
+                                "Add Roll",
+                                style: TextStyle(fontSize: 20)
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                          child: new RaisedButton(
+                            onPressed: () {
+                              setState(() {
+                                subtract();
+                              });
+                            },
+                            textColor: Colors.white,
+                            color: Color(0xFF27ae60),
+                            child: new Text(
+                                "Subtract Roll",
+                                style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top:10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Expanded(
+                          flex: 1,
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                            child: new RaisedButton(
+                              onPressed: () {
+                                setState(() {
+                                  saveDiceRoll();
+                                });
+                              },
+                              textColor: Colors.white,
+                              color: Color(0xFF27ae60),
+                              child: new Text(
+                                  "Save",
+                                  style: TextStyle(fontSize: 20)
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Padding(
+                            padding: EdgeInsets.only(left:8.0, right: 8.0),
+                            child: new RaisedButton(
+                              onPressed: () {
+                                setState(() {
+                                  diceRoll();
+                                });
+                              },
+                              textColor: Colors.white,
+                              color: Color(0xFF27ae60),
+                              padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                              child: new Text(
+                                  "Roll",
+                                  style: TextStyle(fontSize: 20)
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                            child: new RaisedButton(
+                              onLongPress: () {
+                                setState(() {
+                                  clearDiceRoll();
+                                });
+                              },
+                              textColor: Colors.white,
+                              color: Color(0xFF27ae60),
+                              padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                              child: new Text(
+                                  "Clear(Hold)",
+                                  style: TextStyle(fontSize: 20)
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
