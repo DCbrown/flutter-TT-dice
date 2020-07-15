@@ -386,7 +386,7 @@ class HomePage extends StatefulWidget {
                               },
                               textColor: Colors.white,
                               color: Color(0xFF27ae60),
-                              padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                              padding: const EdgeInsets.only(left:5.0, right: 5.0),
                               child: new Text(
                                   "Roll",
                                   style: TextStyle(fontSize: 20)
@@ -397,7 +397,7 @@ class HomePage extends StatefulWidget {
                         Expanded(
                           flex: 1,
                           child: Padding(
-                            padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                            padding: EdgeInsets.only(left: 5.0, right: 5.0),
                             child: new RaisedButton(
                               onLongPress: () {
                                 setState(() {
@@ -406,7 +406,7 @@ class HomePage extends StatefulWidget {
                               },
                               textColor: Colors.white,
                               color: Color(0xFF27ae60),
-                              padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                              padding: const EdgeInsets.only(left:5.0, right: 5.0),
                               child: new Text(
                                   "Clear(Hold)",
                                   style: TextStyle(fontSize: 20)
