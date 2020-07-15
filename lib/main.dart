@@ -234,7 +234,7 @@ class HomePage extends StatefulWidget {
             },
             child: Text(
               "D20: 20 sided dice",
-              style: TextStyle(fontSize: 20.0),
+              style: TextStyle(fontSize: 18.0),
             ),
           )
         ],
@@ -289,7 +289,7 @@ class HomePage extends StatefulWidget {
                             color: Color(0xFF27ae60),
                             child: new Text(
                                 "Select Dice",
-                                style: TextStyle(fontSize: 20)
+                                style: TextStyle(fontSize: 18)
                             ),
                           ),
                         ),
@@ -324,7 +324,7 @@ class HomePage extends StatefulWidget {
                             color: Color(0xFF27ae60),
                             child: new Text(
                                 "Add Roll",
-                                style: TextStyle(fontSize: 20)
+                                style: TextStyle(fontSize: 18)
                             ),
                           ),
                         ),
@@ -343,7 +343,7 @@ class HomePage extends StatefulWidget {
                             color: Color(0xFF27ae60),
                             child: new Text(
                                 "Subtract Roll",
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 18),
                             ),
                           ),
                         ),
@@ -369,7 +369,7 @@ class HomePage extends StatefulWidget {
                               color: Color(0xFF27ae60),
                               child: new Text(
                                   "Save",
-                                  style: TextStyle(fontSize: 20)
+                                  style: TextStyle(fontSize: 18)
                               ),
                             ),
                           ),
@@ -386,10 +386,10 @@ class HomePage extends StatefulWidget {
                               },
                               textColor: Colors.white,
                               color: Color(0xFF27ae60),
-                              padding: const EdgeInsets.only(left:5.0, right: 5.0),
+                              padding: const EdgeInsets.only(left:1.0, right: 1.0),
                               child: new Text(
                                   "Roll",
-                                  style: TextStyle(fontSize: 20)
+                                  style: TextStyle(fontSize: 18)
                               ),
                             ),
                           ),
@@ -408,8 +408,8 @@ class HomePage extends StatefulWidget {
                               color: Color(0xFF27ae60),
                               padding: const EdgeInsets.only(left:5.0, right: 5.0),
                               child: new Text(
-                                  "Clear(Hold)",
-                                  style: TextStyle(fontSize: 20)
+                                  "Clear - Hold",
+                                  style: TextStyle(fontSize: 18)
                               ),
                             ),
                           ),
